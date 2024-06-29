@@ -1,11 +1,11 @@
 import React from 'react'
 
-const UserList = () => {
+const Project = () => {
   return (
     <div>
-      UserList
+      Project
     </div>
   )
 }
 
-export default UserList
+export default Project
