@@ -1,19 +1,12 @@
-"use client";
+const fetchProducts = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
+  return data;
+};
 
-import React, { useEffect, useState } from "react";
-
-const Data = () => {
-  const [product, setProduct] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-      const data = await res.json();
-      setProduct(data);
-    };
-
-    getData();
-  }, []);
+const Data = async () => {
+  const products = await fetchProducts();
+  console.log(products, "-->");
 
   return (
     <div>
@@ -21,10 +14,8 @@ const Data = () => {
         FETCHING DATA USING CLIENT COMPONENT
       </h1>
       <ul>
-        {product?.map((item) => (
-          <li key={item.id} className="m-2 p-2 border-blue-500 border-2">
-            {item.title}
-          </li>
+        {products?.map((item) => (
+          <li key={item.id} className="p-2 m-2 border-red-600 border-2">{item.title}</li>
         ))}
       </ul>
     </div>
