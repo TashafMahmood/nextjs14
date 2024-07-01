@@ -2,18 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
 
-ul {
-  display: flex;
-  gap: 20px;
-}
-
-a {
-    cursor: pointer;
-}
